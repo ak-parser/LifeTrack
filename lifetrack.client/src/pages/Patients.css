@@ -49,25 +49,7 @@
     display: flex;
 }
 
-.ph_but
-{
-    display: flex;
-    
-}
-
-.name_doctor
-{
-    margin: 0;
-    color: white;
-}
-
-.position
-{
-    margin: 0;
-    color: white;
-}
-
-.place
+.pl
 {
     width: 99vw;
     height: 89vh;
@@ -76,35 +58,45 @@
     margin-top: 77px;
 }
 
-.photo
+.patient
 {
-    height: 89vh;
-    width: 100vw;
+    width: 99vw;
 }
 
-.button_place
+.pat_tr
 {
-    width: 100vw;
-    height: 89vh;
-}
-
-.buttons
-{
-    margin-top: 200px;
-    align-items: center;
-}
-
-.button_menu
-{
-    margin: 2px;
-    width: 500px;
-    height: 50px;
-    border-radius: 50px;
-    border: 0;
-    background-color: #13B2BC;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
+    font-weight:bolder;
     font-family:Verdana, sans-serif;
+    color:black;
 }
 
+.pat_td
+{
+    font-weight:500;
+    font-family:Verdana, sans-serif;
+    color:black;
+}
+
+.name_patient
+{
+    margin: 3px;
+    color: white;
+}
+
+.doctor
+{
+    width: 85vw;
+    text-align: right;
+}
+
+.doctor_button
+{
+    margin-right: 30px;
+    margin-top: 8px;
+    font-size: 40px;
+    font-weight:bold;
+    font-family:Verdana, sans-serif;
+    color:white;
+    background-color: #13D8E4;
+    border: 0;
+}

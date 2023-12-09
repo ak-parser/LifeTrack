@@ -1,0 +1,62 @@
+.window-main_strategy
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+}
+
+.window_strategy
+{
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #13B2BC;
+    width: 100vw;
+    height: 70px;
+
+}
+
+.name_strategy
+{
+    margin-top: 70px;
+
+}
+
+.place_text_strategy
+{
+    width: 98vw;
+    margin-left: 3px;
+    height: 100vh;
+    text-align: left;
+}
+
+.conclusion_result_strategy
+{
+    color: red;
+    margin: 0;
+}
+
+.out_stategy
+{
+    width: 100vw;
+    text-align: right;
+}
+
+.out_stategy_button
+{
+    margin-top: 10px;
+    margin-right: 30px;
+    background-color: #13B2BC;
+    font-weight:bold;
+    font-family:Verdana, sans-serif;
+    font-size: 20px;
+    color:white;
+    border: 0;
+    border-radius: 50px;
+    width: 200px;
+    height: 40px;
+}
