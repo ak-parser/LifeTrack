@@ -1,49 +1,31 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Login from "./pages/Login";
+import Home from "./pages/Home";
+import Patients from "./pages/Patients";
+import Patient from "./pages/Patient";
+import Patient_history from "./pages/Patient_history";
+import Strategy from "./pages/Strategy";
+import New_strategy from "./pages/New_strategy";
 
 function App() {
-    const [forecasts, setForecasts] = useState();
-
-    useEffect(() => {
-        populateWeatherData();
-    }, []);
-
-    const contents = forecasts === undefined
-        ? <p><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationreact">https://aka.ms/jspsintegrationreact</a> for more details.</em></p>
-        : <table className="table table-striped" aria-labelledby="tabelLabel">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Temp. (C)</th>
-                    <th>Temp. (F)</th>
-                    <th>Summary</th>
-                </tr>
-            </thead>
-            <tbody>
-                {forecasts.map(forecast =>
-                    <tr key={forecast.date}>
-                        <td>{forecast.date}</td>
-                        <td>{forecast.temperatureC}</td>
-                        <td>{forecast.temperatureF}</td>
-                        <td>{forecast.summary}</td>
-                    </tr>
-                )}
-            </tbody>
-        </table>;
-
     return (
-        <div>
-            <h1 id="tabelLabel">Weather forecast</h1>
-            <p>This component demonstrates fetching data from the server</p>
-            {contents}
-        </div>
-    );
-    
-    async function populateWeatherData() {
-        const response = await fetch('weatherforecast');
-        const data = await response.json();
-        setForecasts(data);
-    }
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Login />}></Route>
+            <Route path='/home' element={<Home />}></Route>
+            <Route path='/patients' element={<Patients />}></Route>
+            <Route path='/patient' element={<Patient />}></Route>
+            <Route path='/patient_history' element={<Patient_history />}></Route>
+            <Route path='/strategy' element={<Strategy />}></Route>
+            <Route path='/new_strategy' element={<New_strategy />}></Route>
+          </Routes>
+        </BrowserRouter>
+      );
 }
 
+
 export default App;
+

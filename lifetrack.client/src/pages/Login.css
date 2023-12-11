@@ -1,0 +1,116 @@
+
+
+.window-main
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+}
+
+.window
+{
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #13D8E4;
+    width: 100vw;
+    height: 70px;
+
+}
+
+.name
+{
+    left: 70px;
+    margin-left: 5px;
+}
+
+.name_system
+{
+    margin: 0;
+    text-align: left;
+    font-size: 28px;
+    color: #ffffff;
+}
+
+.circle
+{
+    margin-top: 2px;
+    margin-left: 30px;
+    border-radius: 50px;
+    width: 65px;
+    height: 65px;
+    background-color: white;
+}
+
+.flex
+{
+    display: flex;
+}
+
+
+.work_place
+{
+    margin-top: 70px;
+    display: flex; 
+    justify-content: center; 
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+.login_place
+{
+    margin-top: 130px;
+    background-color: #13D8E4;
+    width: 452px;
+    height: 341px;
+}
+
+.log_in
+{
+    color: white;
+    margin-top: 10px;
+}
+
+.write_place
+{
+    margin-left: 5px;
+    text-align: left;
+}
+
+.inputs
+{
+    margin: 0;
+    width: 432px;
+    height: 30px;
+    border-radius: 50px;
+    border: 0;
+
+}
+
+.log_pass
+{
+    margin: 0;
+    color:white;
+}
+
+.send
+{
+    border-radius: 50px;
+    margin-top: 20px;
+    margin-left: 75px;
+    background-color: #13B2BC;
+    width: 300px;
+    height: 60px;
+    border: 0;
+    font-size: 30px;
+    font-weight: bold;
+    font-family:Verdana, sans-serif;
+    color:white;
+    text-align: center;
+}
+

@@ -1,0 +1,102 @@
+.window-main
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+}
+
+.window
+{
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #13D8E4;
+    width: 100vw;
+    height: 70px;
+
+}
+
+.name
+{
+    left: 70px;
+    margin-left: 5px;
+}
+
+.name_system
+{
+    margin: 0;
+    text-align: left;
+    font-size: 28px;
+    color: #ffffff;
+}
+
+.circle
+{
+    margin-top: 2px;
+    margin-left: 30px;
+    border-radius: 50px;
+    width: 65px;
+    height: 65px;
+    background-color: white;
+}
+
+.flex
+{
+    display: flex;
+}
+
+.pl
+{
+    width: 99vw;
+    height: 89vh;
+    background-color: #13D8E4;
+    margin-left: 7px;
+    margin-top: 77px;
+}
+
+.patient
+{
+    width: 99vw;
+}
+
+.pat_tr
+{
+    font-weight:bolder;
+    font-family:Verdana, sans-serif;
+    color:black;
+}
+
+.pat_td
+{
+    font-weight:500;
+    font-family:Verdana, sans-serif;
+    color:black;
+}
+
+.name_patient
+{
+    margin: 3px;
+    color: white;
+}
+
+.doctor
+{
+    width: 85vw;
+    text-align: right;
+}
+
+.doctor_button
+{
+    margin-right: 30px;
+    margin-top: 8px;
+    font-size: 40px;
+    font-weight:bold;
+    font-family:Verdana, sans-serif;
+    color:white;
+    background-color: #13D8E4;
+    border: 0;
+}

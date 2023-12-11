@@ -1,0 +1,67 @@
+.place_new_strategy
+{
+    width: 99vw;
+    height: 89vh;
+    background-color: #13D8E4;
+    margin-left: 7px;
+    margin-top: 77px;
+}
+
+.place_carousel
+{
+    width: 99vw;
+    height: 601px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel_page1
+{
+    width: 1200px;
+    height: 500px;
+    background-color: rgb(240, 227, 227);
+    border-radius: 50px;
+}
+
+.carousel_page2
+{
+    width: 1200px;
+    height: 500px;
+    background-color: rgb(240, 227, 227);
+    border-radius: 50px;
+}
+
+.new_strategy_buttons
+{
+    align-items: end;
+    display: flex;
+    width: 100vw;
+}
+
+.new_strategy_button_left
+{
+    text-align: left;
+    width: 49vw;
+}
+
+.new_strategy_button_right
+{
+    text-align: right;
+    width: 50vw;
+}
+
+.buttons_new_stategy
+{
+    width: 200px;
+    height: 40px;
+    background-color: #13B2BC;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    font-family:Verdana, sans-serif;
+    margin-left: 40px;
+    margin-right: 40px;
+    border-radius: 50px;
+    border: 0;
+}
