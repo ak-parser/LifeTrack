@@ -49,13 +49,45 @@
     display: flex;
 }
 
+.links {
+    margin-inline: auto;
+    margin-top: 10px;
+    color: lightcyan;
+    font-family: Georgia, serif;
+    font-size: 30px;
+    font-style: italic;
+    cursor: pointer;
+}
+
 .pl
 {
     width: 99vw;
     height: 89vh;
-    background-color: #13D8E4;
+    background-color: lightcyan;
     margin-left: 7px;
     margin-top: 77px;
+}
+
+.search {
+    display: flex; 
+    align-items: center;
+    padding: 20px;
+}
+
+.search-input {
+    width: 300px; 
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.search-btn {
+    padding: 10px;
+    margin-left: 10px;
+    background-color: PaleTurquoise;
+    color: darkcyan;
+    border-radius: 15px;
+    border: 0;
 }
 
 .patient
@@ -77,26 +109,19 @@
     color:black;
 }
 
-.name_patient
+.head-place {
+    display: flex;
+    justify-content: space-between;
+}
+.heads
 {
     margin: 3px;
-    color: white;
+    color: darkcyan;
 }
-
-.doctor
-{
-    width: 85vw;
-    text-align: right;
-}
-
-.doctor_button
-{
-    margin-right: 30px;
-    margin-top: 8px;
-    font-size: 40px;
-    font-weight:bold;
-    font-family:Verdana, sans-serif;
-    color:white;
-    background-color: #13D8E4;
-    border: 0;
-}
+    #patients
+    {
+        float: left;
+    }
+    #docor{
+        float: right;
+    }

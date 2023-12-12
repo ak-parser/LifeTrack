@@ -1,43 +1,61 @@
+import * as React from 'react';
 import './Login.css';
-//import { useHistory } from 'react-router-dom';
 
 
-const Login = () => {
-  
-  //const history = useHistory();
+class Login extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: '',
+            password: ''
+        };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
 
-  const handleClick = () => {
-    
-    history.push('/home');
-  };
+    handleChange = (event) => {
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        });
+    }
 
-    return (
-      <div className='window-main'>
-        <div className='window'>
-          <div className='flex'>
-            <div className='circle'></div>
-            <div className='name'>
-              <h1 className='name_system'>Health</h1>
-              <h1 className='name_system'>Tracking</h1>
+    handleSubmit = (event) => {
+
+        event.preventDefault();
+        window.location = '/home';
+    }
+
+    render() {
+        return (
+            <div className='window-main'>
+                <div className='window'>
+                    <div className='flex'>
+                        <div className='circle'></div>
+                        <div className='name'>
+                            <h1 className='name_system'>Health</h1>
+                            <h1 className='name_system'>Tracking</h1>
+                        </div>
+                    </div>
+
+                </div>
+                <div className='work_place'>
+                    <div className='login_place'>
+                        <div className='write_place'>
+                            <h3 className='log_pass'>Email</h3>
+                            <input className='inputs' placeholder="Enter your email"></input>
+                            <h3 className='log_pass'>Password</h3>
+                            <input className='inputs' type="password" placeholder="Enter yor password"></input>
+                            <h4 className='link-password'>Forgot password?</h4>
+                            <input className='send' type='button' value="Log in" onClick={this.handleSubmit}></input>
+                            <h4 className='link-signup'>Sign up</h4>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          
-        </div>
-        <div className='work_place'>
-          <div className='login_place'>
-            <h1 className='log_in'>Log in</h1>
-            <div className='write_place'>
-              <h3 className='log_pass'>Email:</h3>
-              <input className='inputs'></input>
-              <h3 className='log_pass'>Password:</h3>
-              <input className='inputs'></input>
-              <input className='send' type='button' value = "Log in ->" onClick={handleClick}></input>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  };
+        );
+    }
+}
   
   export default Login;
 
