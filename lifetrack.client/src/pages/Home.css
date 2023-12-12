@@ -14,10 +14,8 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #13D8E4;
     width: 100vw;
     height: 70px;
-
 }
 
 .name
@@ -44,21 +42,39 @@
     background-color: white;
 }
 
-.flex
-{
-    display: flex;
+.links {
+    margin-inline: auto;
+    margin-top: 10px;
+    color: lightcyan;
+    font-family: Georgia, serif;
+    font-size:30px;
+    font-style: italic;
 }
 
-.ph_but
+.flex
 {
     display: flex;
     
 }
 
-.name_doctor
-{
-    margin: 0;
-    color: white;
+.ph_but {
+    display: flex;
+}
+
+.place {
+    width: 99vw;
+    height: 89vh;
+    margin-left: 7px;
+    margin-top: 77px;
+    display: flex;
+    flex-direction: column;
+    font-family: Century;
+    padding: 20px;
+    background-color: lightcyan;
+}
+.name_doctor {
+    margin: 30px;
+    font-size: 36px;
 }
 
 .position
@@ -67,44 +83,56 @@
     color: white;
 }
 
-.place
-{
-    width: 99vw;
-    height: 89vh;
-    background-color: #13D8E4;
-    margin-left: 7px;
-    margin-top: 77px;
+
+.photo {
+    height: 250px;
+    width: 250px;
+    margin-right: 20px;
 }
 
-.photo
-{
-    height: 89vh;
-    width: 100vw;
+    .photo img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+.information {
+    flex-grow: 1;
+    padding: 20px;
 }
 
-.button_place
-{
-    width: 100vw;
-    height: 89vh;
+    .information h2 {
+        font-size: 32px;
+    }
+
+    .information h3 {
+        font-size: 28px;
+        margin-top: 5px;
+    }
+
+#inf {
+    text-decoration: underline;
 }
 
-.buttons
-{
-    margin-top: 200px;
-    align-items: center;
+.button_place {
+    margin-top: 20px;
 }
 
-.button_menu
-{
-    margin: 2px;
-    width: 500px;
-    height: 50px;
-    border-radius: 50px;
+.buttons {
+    display: flex;
+    gap: 10px;
+    padding-top: 50px;
+}
+
+.button_menu {
+    padding: 20px;
+    margin: 20px;
+    margin-top: 50px;
+    font-size: 30px;
+    background-color: PaleTurquoise;
+    color: darkcyan;
+    border-radius: 15px;
     border: 0;
-    background-color: #13B2BC;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    font-family:Verdana, sans-serif;
 }
 

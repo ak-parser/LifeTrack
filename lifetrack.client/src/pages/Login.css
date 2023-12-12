@@ -59,15 +59,19 @@
     justify-content: center; 
     width: 100vw;
     height: 100vh;
-    
+    background-color: darkcyan;
 }
 
-.login_place
-{
+.login_place {
     margin-top: 130px;
-    background-color: #13D8E4;
-    width: 452px;
-    height: 341px;
+    background-color: lightcyan;
+    width: 450px;
+    height: 600px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Verdana, sans-serif;
 }
 
 .log_in
@@ -78,39 +82,102 @@
 
 .write_place
 {
-    margin-left: 5px;
+    margin: 15px;
+    margin-top: 20px;
     text-align: left;
+
 }
 
-.inputs
-{
-    margin: 0;
-    width: 432px;
-    height: 30px;
-    border-radius: 50px;
+.inputs {
+    margin: 10px;
+    width: 400px;
+    height: 60px;
+    border-radius: 10px;
     border: 0;
-
+    background-color: lightblue;
+    color: black;
+    font-family: Consolas;
+    font-size: 20px;
 }
 
-.log_pass
+.link-password
 {
-    margin: 0;
-    color:white;
+    float: right;
+    margin-right: 10px;
+    color: darkslategray;
+    text-decoration: underline;
+    margin-top: 20px;
+}
+
+.link-signup 
+{
+    margin-top: 15px;
+    color: darkslategray;
+    text-decoration: underline;
+    margin-left: 155px;
+    font-size: 30px;
+}
+
+
+.log_pass {
+    margin: 15px;
+    margin-top: 30px;
+    color: black;
+    font-weight: 500;
+    font-size: 32px;
 }
 
 .send
 {
-    border-radius: 50px;
-    margin-top: 20px;
-    margin-left: 75px;
-    background-color: #13B2BC;
+    border-radius: 15px;
+    background-color: darkslategray;
     width: 300px;
     height: 60px;
     border: 0;
     font-size: 30px;
     font-weight: bold;
     font-family:Verdana, sans-serif;
-    color:white;
+    color:lightcyan;
     text-align: center;
+    margin-top: 90px;
+    margin-left: 60px;
+}
+
+@media (max-width: 768px) {
+    .window {
+        height: 120px; /* Змінюємо висоту верхньої частини для маленьких екранів */
+    }
+
+    .name {
+        left: 0;
+        margin-left: 10px;
+    }
+
+    .circle {
+        margin-left: 10px;
+    }
+
+    .work_place {
+        margin-top: 120px;
+    }
+
+    .login_place {
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .inputs {
+        width: 100%;
+    }
+
+    .send {
+        width: 100%;
+    }
+
+    .link-signup {
+        margin-left: 0;
+    }
 }
 
