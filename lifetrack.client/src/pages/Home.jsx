@@ -9,7 +9,7 @@ class Home extends React.Component {
             first_name: '',
             last_name: '',
             middle_name: '',
-            pip: first_name + " " + last_name + " " + middle_name,
+            pip: '',
             position: '',
             email: ''
         };
