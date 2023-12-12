@@ -1,10 +1,11 @@
-﻿using System.Net.Cache;
+using System.Net.Cache;
 using System.Reflection;
 
 namespace LifeTrack.Server.DataModels.Users
 {
     public class Person
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Patronymic { get; set; }
