@@ -1,77 +1,246 @@
 [
-    {
-      "Name": "John",
-      "Surname": "Doe",
-      "Patronymic": "Middle",
-      "Email": "john.doe@example.com",
-      "Gender": 0,
-      "BirthDate": "1980-01-01",
-      "Speciality": "Cardiologist",
-      "Patients": [
+  {
+    "Id": 1,
+    "Name": "Олена",
+    "Surname": "Петрів",
+    "Patronymic": "Ігорівна",
+    "Email": "doctor.olena.petriv@doc.com",
+    "Gender": "Female",
+    "BirthDate": "1980-01-01",
+    "Speciality": "Кардіолог",
+    "Patients": [
         {
-          "Name": "Alice",
-          "Surname": "Smith",
-          "Patronymic": "Middle",
-          "Email": "alice.smith@example.com",
-          "Gender": 1,
-          "BirthDate": "1990-05-15",
-          "DiagnosisValue": {
-            "Name": "Hypertension"
-          },
-          "HealthMetricsCollection": [
-            {
-              "Name": "Blood Pressure",
-              "HealthMetricsValuesCollection": [
-                {
-                  "Value": 120,
-                  "MeasurementDateTime": "2023-01-15T08:30:00"
-                },
-                {
-                  "Value": 80,
-                  "MeasurementDateTime": "2023-01-15T08:35:00"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "Jane",
-      "Surname": "Smith",
-      "Patronymic": "Middle",
-      "Email": "jane.smith@example.com",
-      "Gender": 1,
-      "BirthDate": "1985-02-10",
-      "Speciality": "Pediatrician",
-      "Patients": [
+          "Id": 3,
+          "Name": "Іван",
+          "Surname": "Петров",
+          "Patronymic": "Олександрович",
+          "Email": "ivan.petrov@example.com",
+          "Gender": "Male",
+          "BirthDate": "1972-08-20",
+          "DiagnosisValue": "КАГ",
+          "HealthMetricsCollection": []
+        },
         {
-          "Name": "Bob",
-          "Surname": "Johnson",
-          "Patronymic": "Middle",
-          "Email": "bob.johnson@example.com",
-          "Gender": 0,
-          "BirthDate": "2010-08-20",
-          "DiagnosisValue": {
-            "Name": "Common Cold"
-          },
-          "HealthMetricsCollection": [
-            {
-              "Name": "Temperature",
-              "HealthMetricsValuesCollection": [
-                {
-                  "Value": 38.5,
-                  "MeasurementDateTime": "2023-01-15T09:45:00"
-                },
-                {
-                  "Value": 37.8,
-                  "MeasurementDateTime": "2023-01-15T10:00:00"
-                }
-              ]
-            }
-          ]
+          "Id": 4,
+          "Name": "Олена",
+          "Surname": "Іванова",
+          "Patronymic": "Миколаївна",
+          "Email": "olena.ivanova@example.com",
+          "Gender": "Female",
+          "BirthDate": "1965-03-12",
+          "DiagnosisValue": "Артеріальна гіпертензія",
+          "HealthMetricsCollection": []
+        },
+        {
+          "Id": 5,
+          "Name": "Михайло",
+          "Surname": "Сидоров",
+          "Patronymic": "Васильович",
+          "Email": "mikhail.sidorov@example.com",
+          "Gender": "Male",
+          "BirthDate": "1980-11-05",
+          "DiagnosisValue": "Серцева недостатність",
+          "HealthMetricsCollection": []
+        },
+        {
+          "Id": 6,
+          "Name": "Анна",
+          "Surname": "Ковальчук",
+          "Patronymic": "Ігорівна",
+          "Email": "anna.kovalchuk@example.com",
+          "Gender": "Female",
+          "BirthDate": "1979-09-18",
+          "DiagnosisValue": "Аритмії",
+          "HealthMetricsCollection": []
+        },
+        {
+          "Id": 7,
+          "Name": "Юрій",
+          "Surname": "Мельник",
+          "Patronymic": "Олексійович",
+          "Email": "yuriy.melnik@example.com",
+          "Gender": "Male",
+          "BirthDate": "1978-04-30",
+          "DiagnosisValue": "Вади серця",
+          "HealthMetricsCollection": []
+        },
+        {
+          "Id": 8,
+          "Name": "Оксана",
+          "Surname": "Лисенко",
+          "Patronymic": "Володимирівна",
+          "Email": "oksana.lisenko@example.com",
+          "Gender": "Female",
+          "BirthDate": "1966-07-25",
+          "DiagnosisValue": "КАГ",
+          "HealthMetricsCollection": []
+        },
+        {
+          "Id": 9,
+          "Name": "Андрій",
+          "Surname": "Павленко",
+          "Patronymic": "Іванович",
+          "Email": "andriy.pavlenko@example.com",
+          "Gender": "Male",
+          "BirthDate": "1973-12-15",
+          "DiagnosisValue": "Артеріальна гіпертензія",
+          "HealthMetricsCollection": []
+        },
+        {
+          "Id": 10,
+          "Name": "Тетяна",
+          "Surname": "Григоренко",
+          "Patronymic": "Анатоліївна",
+          "Email": "tetiana.grigorenko@example.com",
+          "Gender": "Female",
+          "BirthDate": "1985-06-08",
+          "DiagnosisValue": "Серцева недостатність",
+          "HealthMetricsCollection": []
+        },
+        {
+          "Id": 11,
+          "Name": "Володимир",
+          "Surname": "Савченко",
+          "Patronymic": "Михайлович",
+          "Email": "volodymyr.savchenko@example.com",
+          "Gender": "Male",
+          "BirthDate": "1971-02-19",
+          "DiagnosisValue": "Аритмії",
+          "HealthMetricsCollection": []
+        },
+        {
+          "Id": 12,
+          "Name": "Наталя",
+          "Surname": "Полякова",
+          "Patronymic": "Сергіївна",
+          "Email": "natalia.polyakova@example.com",
+          "Gender": "Female",
+          "BirthDate": "1977-10-03",
+          "DiagnosisValue": "Вади серця",
+          "HealthMetricsCollection": []
         }
-      ]
-    }
-  ]
-
+    ]
+  },
+  {
+    "Id": 2,
+    "Name": "Іван",
+    "Surname": "Ковальчук",
+    "Patronymic": "Васильович",
+    "Email": "i.v.kovalchuk@doc.com",
+    "Gender": "Male",
+    "BirthDate": "1985-05-15",
+    "Speciality": "Кардіохірург",
+    "Patients": [
+      {
+        "Id": 13,
+        "Name": "Петро",
+        "Surname": "Марченко",
+        "Patronymic": "Геннадійович",
+        "Email": "petro.marchenko@example.com",
+        "Gender": "Male",
+        "BirthDate": "1970-01-28",
+        "DiagnosisValue": "КАГ",
+        "HealthMetricsCollection": []
+      },
+      {
+        "Id": 14,
+        "Name": "Вікторія",
+        "Surname": "Клименко",
+        "Patronymic": "Юріївна",
+        "Email": "viktoria.klymenko@example.com",
+        "Gender": "Female",
+        "BirthDate": "1982-08-14",
+        "DiagnosisValue": "Артеріальна гіпертензія",
+        "HealthMetricsCollection": []
+      },
+      {
+        "Id": 15,
+        "Name": "Григорій",
+        "Surname": "Онопрієнко",
+        "Patronymic": "Олегович",
+        "Email": "hryhoriy.onoprienko@example.com",
+        "Gender": "Male",
+        "BirthDate": "1974-04-22",
+        "DiagnosisValue": "Серцева недостатність",
+        "HealthMetricsCollection": []
+      },
+      {
+        "Id": 16,
+        "Name": "Світлана",
+        "Surname": "Шевченко",
+        "Patronymic": "Петрівна",
+        "Email": "svitlana.shevchenko@example.com",
+        "Gender": "Female",
+        "BirthDate": "1969-09-07",
+        "DiagnosisValue": "Аритмії",
+        "HealthMetricsCollection": []
+      },
+      {
+        "Id": 17,
+        "Name": "Євген",
+        "Surname": "Литвиненко",
+        "Patronymic": "Максимович",
+        "Email": "yevhen.litvinenko@example.com",
+        "Gender": "Male",
+        "BirthDate": "1987-03-18",
+        "DiagnosisValue": "Вади серця",
+        "HealthMetricsCollection": []
+      },
+      {
+        "Id": 18,
+        "Name": "Людмила",
+        "Surname": "Кравченко",
+        "Patronymic": "Вікторівна",
+        "Email": "lyudmyla.kravchenko@example.com",
+        "Gender": "Female",
+        "BirthDate": "1976-11-11",
+        "DiagnosisValue": "КАГ",
+        "HealthMetricsCollection": []
+      },
+      {
+        "Id": 19,
+        "Name": "Артем",
+        "Surname": "Макаренко",
+        "Patronymic": "Олександрович",
+        "Email": "artem.makarenko@example.com",
+        "Gender": "Male",
+        "BirthDate": "1980-06-25",
+        "DiagnosisValue": "Артеріальна гіпертензія",
+        "HealthMetricsCollection": []
+      },
+      {
+        "Id": 20,
+        "Name": "Ольга",
+        "Surname": "Семенюк",
+        "Patronymic": "Ігорівна",
+        "Email": "olga.semenyuk@example.com",
+        "Gender": "Female",
+        "BirthDate": "1968-12-29",
+        "DiagnosisValue": "Серцева недостатність",
+        "HealthMetricsCollection": []
+      },
+      {
+        "Id": 21,
+        "Name": "Роман",
+        "Surname": "Кузьмін",
+        "Patronymic": "Миколайович",
+        "Email": "roman.kuzmin@example.com",
+        "Gender": "Male",
+        "BirthDate": "1973-07-17",
+        "DiagnosisValue": "Аритмії",
+        "HealthMetricsCollection": []
+      },
+      {
+        "Id": 22,
+        "Name": "Ігор",
+        "Surname": "Шевчук",
+        "Patronymic": "Анатолійович",
+        "Email": "igor.shevchuk@example.com",
+        "Gender": "Male",
+        "BirthDate": "1971-02-08",
+        "DiagnosisValue": "Вади серця",
+        "HealthMetricsCollection": []
+      }
+    ]
+  }
+]
