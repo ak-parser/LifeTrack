@@ -4,5 +4,8 @@
     {
         public string Name { get; set; }
         public ICollection<HealthMetricValue> HealthMetricsValuesCollection { get; set; }
+        public HealthMetric() { 
+            HealthMetricsValuesCollection = new List<HealthMetricValue>();
+        }
     }
 }

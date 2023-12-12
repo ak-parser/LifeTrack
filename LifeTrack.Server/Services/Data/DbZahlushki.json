@@ -1,14 +1,22 @@
-{
-  "Doctors": [
+[
     {
-      "FirstName": "John",
-      "LastName": "Doe",
+      "Name": "John",
+      "Surname": "Doe",
+      "Patronymic": "Middle",
+      "Email": "john.doe@example.com",
+      "Gender": 0,
+      "BirthDate": "1980-01-01",
+      "Speciality": "Cardiologist",
       "Patients": [
         {
-          "FirstName": "Alice",
-          "LastName": "Smith",
+          "Name": "Alice",
+          "Surname": "Smith",
+          "Patronymic": "Middle",
+          "Email": "alice.smith@example.com",
+          "Gender": 1,
+          "BirthDate": "1990-05-15",
           "DiagnosisValue": {
-            "Name": "Some Diagnosis"
+            "Name": "Hypertension"
           },
           "HealthMetricsCollection": [
             {
@@ -16,59 +24,48 @@
               "HealthMetricsValuesCollection": [
                 {
                   "Value": 120,
-                  "MeasurementDateTime": "2023-01-01T12:30:00"
+                  "MeasurementDateTime": "2023-01-15T08:30:00"
                 },
                 {
                   "Value": 80,
-                  "MeasurementDateTime": "2023-01-02T10:45:00"
-                }
-              ]
-            },
-            {
-              "Name": "Temperature",
-              "HealthMetricsValuesCollection": [
-                {
-                  "Value": 98.6,
-                  "MeasurementDateTime": "2023-01-01T12:30:00"
-                },
-                {
-                  "Value": 99.0,
-                  "MeasurementDateTime": "2023-01-02T10:45:00"
+                  "MeasurementDateTime": "2023-01-15T08:35:00"
                 }
               ]
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "Name": "Jane",
+      "Surname": "Smith",
+      "Patronymic": "Middle",
+      "Email": "jane.smith@example.com",
+      "Gender": 1,
+      "BirthDate": "1985-02-10",
+      "Speciality": "Pediatrician",
+      "Patients": [
         {
-          "FirstName": "Bob",
-          "LastName": "Johnson",
+          "Name": "Bob",
+          "Surname": "Johnson",
+          "Patronymic": "Middle",
+          "Email": "bob.johnson@example.com",
+          "Gender": 0,
+          "BirthDate": "2010-08-20",
           "DiagnosisValue": {
-            "Name": "Another Diagnosis"
+            "Name": "Common Cold"
           },
           "HealthMetricsCollection": [
             {
-              "Name": "Blood Sugar",
+              "Name": "Temperature",
               "HealthMetricsValuesCollection": [
                 {
-                  "Value": 90,
-                  "MeasurementDateTime": "2023-01-01T08:00:00"
+                  "Value": 38.5,
+                  "MeasurementDateTime": "2023-01-15T09:45:00"
                 },
                 {
-                  "Value": 95,
-                  "MeasurementDateTime": "2023-01-03T09:15:00"
-                }
-              ]
-            },
-            {
-              "Name": "Cholesterol",
-              "HealthMetricsValuesCollection": [
-                {
-                  "Value": 180,
-                  "MeasurementDateTime": "2023-01-01T08:00:00"
-                },
-                {
-                  "Value": 200,
-                  "MeasurementDateTime": "2023-01-03T09:15:00"
+                  "Value": 37.8,
+                  "MeasurementDateTime": "2023-01-15T10:00:00"
                 }
               ]
             }
@@ -77,4 +74,4 @@
       ]
     }
   ]
-}
+

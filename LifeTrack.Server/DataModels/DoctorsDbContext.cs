@@ -18,12 +18,9 @@ namespace LifeTrack.Server.DataModels
             if (File.Exists(jsonFilePath))
             {
                 string jsonContent = File.ReadAllText(jsonFilePath);
-                var dbContext = JsonConvert.DeserializeObject<DoctorsDbContext>(jsonContent);
+                var doctors = JsonConvert.DeserializeObject<List<Doctor>>(jsonContent);
 
-                if (dbContext != null && dbContext.Doctors != null)
-                {
-                    Doctors = dbContext.Doctors;
-                }
+                Doctors = doctors;
             }
         }
     }

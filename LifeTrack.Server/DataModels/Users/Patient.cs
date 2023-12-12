@@ -6,5 +6,8 @@ namespace LifeTrack.Server.DataModels.Users
     {
         public Diagnosis DiagnosisValue { get; set; }
         public ICollection<HealthMetric> HealthMetricsCollection { get; set; }
+        public Patient() { 
+            HealthMetricsCollection = new List<HealthMetric>();
+        }
     }
 }

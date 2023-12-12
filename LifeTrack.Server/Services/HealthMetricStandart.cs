@@ -44,7 +44,7 @@ namespace LifeTrack.Server.Services
 
         public Range<double> GetStandardRange(string metricName, Person person)
         {
-            return GetStandardRange(metricName, person.Gender, person.Age);
+            return GetStandardRange(metricName, person.Gender, person.Age());
         }
     }
 }
