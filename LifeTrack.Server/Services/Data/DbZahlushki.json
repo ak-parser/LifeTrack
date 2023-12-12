@@ -1,0 +1,77 @@
+[
+    {
+      "Name": "John",
+      "Surname": "Doe",
+      "Patronymic": "Middle",
+      "Email": "john.doe@example.com",
+      "Gender": 0,
+      "BirthDate": "1980-01-01",
+      "Speciality": "Cardiologist",
+      "Patients": [
+        {
+          "Name": "Alice",
+          "Surname": "Smith",
+          "Patronymic": "Middle",
+          "Email": "alice.smith@example.com",
+          "Gender": 1,
+          "BirthDate": "1990-05-15",
+          "DiagnosisValue": {
+            "Name": "Hypertension"
+          },
+          "HealthMetricsCollection": [
+            {
+              "Name": "Blood Pressure",
+              "HealthMetricsValuesCollection": [
+                {
+                  "Value": 120,
+                  "MeasurementDateTime": "2023-01-15T08:30:00"
+                },
+                {
+                  "Value": 80,
+                  "MeasurementDateTime": "2023-01-15T08:35:00"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "Jane",
+      "Surname": "Smith",
+      "Patronymic": "Middle",
+      "Email": "jane.smith@example.com",
+      "Gender": 1,
+      "BirthDate": "1985-02-10",
+      "Speciality": "Pediatrician",
+      "Patients": [
+        {
+          "Name": "Bob",
+          "Surname": "Johnson",
+          "Patronymic": "Middle",
+          "Email": "bob.johnson@example.com",
+          "Gender": 0,
+          "BirthDate": "2010-08-20",
+          "DiagnosisValue": {
+            "Name": "Common Cold"
+          },
+          "HealthMetricsCollection": [
+            {
+              "Name": "Temperature",
+              "HealthMetricsValuesCollection": [
+                {
+                  "Value": 38.5,
+                  "MeasurementDateTime": "2023-01-15T09:45:00"
+                },
+                {
+                  "Value": 37.8,
+                  "MeasurementDateTime": "2023-01-15T10:00:00"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+

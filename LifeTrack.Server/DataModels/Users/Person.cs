@@ -11,10 +11,8 @@ namespace LifeTrack.Server.DataModels.Users
         public string Email { get; set; }
         public Gender Gender { get; set; }
         public DateTime BirthDate { get; set; }
-        public int Age { get
-            {
-                return DateTime.Now.Year - BirthDate.Year;
-            } 
+        public int Age() {
+            return DateTime.Now.Year - BirthDate.Year; 
         }
     }
 }

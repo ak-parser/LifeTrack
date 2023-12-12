@@ -1,5 +1,6 @@
 ﻿using LifeTrack.Server.DataModels;
 using LifeTrack.Server.DataModels.Users;
+using Newtonsoft.Json;
 
 namespace LifeTrack.Server.Services
 {
@@ -10,14 +11,17 @@ namespace LifeTrack.Server.Services
         public HealthMetricStandard()
         {
             standards = new List<HealthMetricRange>();
-            InitializeStandards();
+            InitializeFromFile();
         }
 
-        private void InitializeStandards()
+        private void InitializeFromFile()
         {
-            AddStandard("BloodPressure", Gender.Male, new Range<int>(18, 40), new Range<double>(120, 80)); // Норми артеріального тиску для чоловіків віком 18-40 років
-            AddStandard("BloodPressure", Gender.Female, new Range<int>(18, 40), new Range<double>(110, 70)); // Норми артеріального тиску для жінок віком 18-40 років
-                                                                                                             // Додайте інші стандарти за потребою
+            string filePath = "Services\\Data\\HealthMetricStandarts.json";
+            string jsonContent = File.ReadAllText(filePath);
+
+            List<HealthMetricRange> ranges = JsonConvert.DeserializeObject<List<HealthMetricRange>>(jsonContent);
+
+            standards.AddRange(ranges);
         }
 
         private void AddStandard(string metricName, Gender gender, Range<int> ageRange, Range<double> standardRange)
@@ -40,7 +44,7 @@ namespace LifeTrack.Server.Services
 
         public Range<double> GetStandardRange(string metricName, Person person)
         {
-            return GetStandardRange(metricName, person.Gender, person.Age);
+            return GetStandardRange(metricName, person.Gender, person.Age());
         }
     }
 }
