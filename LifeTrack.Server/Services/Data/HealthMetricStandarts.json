@@ -1,0 +1,14 @@
+﻿[
+	{
+	"MetricName": "BloodPressure",
+	"Gender": "Male",
+	"AgeRange": {"LowerLimit": 19, "UpperLimit": 40},
+	"ValueRange": {"LowerLimit": 50.0, "UpperLimit": 120.0}
+	},
+	{
+	"MetricName": "BloodPressure",
+	"Gender": "Female",
+	"AgeRange": {"LowerLimit": 20, "UpperLimit": 40},
+	"ValueRange": {"LowerLimit": 70.0, "UpperLimit": 110.0}
+	}
+]
