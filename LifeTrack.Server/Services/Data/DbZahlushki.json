@@ -1,0 +1,80 @@
+{
+  "Doctors": [
+    {
+      "FirstName": "John",
+      "LastName": "Doe",
+      "Patients": [
+        {
+          "FirstName": "Alice",
+          "LastName": "Smith",
+          "DiagnosisValue": {
+            "Name": "Some Diagnosis"
+          },
+          "HealthMetricsCollection": [
+            {
+              "Name": "Blood Pressure",
+              "HealthMetricsValuesCollection": [
+                {
+                  "Value": 120,
+                  "MeasurementDateTime": "2023-01-01T12:30:00"
+                },
+                {
+                  "Value": 80,
+                  "MeasurementDateTime": "2023-01-02T10:45:00"
+                }
+              ]
+            },
+            {
+              "Name": "Temperature",
+              "HealthMetricsValuesCollection": [
+                {
+                  "Value": 98.6,
+                  "MeasurementDateTime": "2023-01-01T12:30:00"
+                },
+                {
+                  "Value": 99.0,
+                  "MeasurementDateTime": "2023-01-02T10:45:00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "FirstName": "Bob",
+          "LastName": "Johnson",
+          "DiagnosisValue": {
+            "Name": "Another Diagnosis"
+          },
+          "HealthMetricsCollection": [
+            {
+              "Name": "Blood Sugar",
+              "HealthMetricsValuesCollection": [
+                {
+                  "Value": 90,
+                  "MeasurementDateTime": "2023-01-01T08:00:00"
+                },
+                {
+                  "Value": 95,
+                  "MeasurementDateTime": "2023-01-03T09:15:00"
+                }
+              ]
+            },
+            {
+              "Name": "Cholesterol",
+              "HealthMetricsValuesCollection": [
+                {
+                  "Value": 180,
+                  "MeasurementDateTime": "2023-01-01T08:00:00"
+                },
+                {
+                  "Value": 200,
+                  "MeasurementDateTime": "2023-01-03T09:15:00"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
