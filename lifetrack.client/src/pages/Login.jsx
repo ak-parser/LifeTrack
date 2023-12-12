@@ -1,17 +1,22 @@
 import * as React from 'react';
 import './Login.css';
 
-
 class Login extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            error: null
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    handleInputChange = (event) => {
+        this.setState({ email: event.target.value });
+    };
 
     handleChange = (event) => {
         const { name, value } = event.target;
@@ -20,11 +25,30 @@ class Login extends React.Component {
         });
     }
 
-    handleSubmit = (event) => {
-
+    handleSubmit = async (event) => {
         event.preventDefault();
-        window.location = '/home';
-    }
+        const { email, password } = this.state;
+    
+        try {
+          const response = await fetch('URL_адреса_сервера/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, password }),
+          });
+    
+          if (!response.ok) {
+            throw new Error('Помилка входу. Неправильний email або пароль');
+          }
+    
+          window.location.href = '/home/' + email;
+        } 
+        
+        catch (error) {
+          this.setState({ error: error.message });
+        }
+    };
 
     render() {
         return (
@@ -43,7 +67,7 @@ class Login extends React.Component {
                     <div className='login_place'>
                         <div className='write_place'>
                             <h3 className='log_pass'>Email</h3>
-                            <input className='inputs' placeholder="Enter your email"></input>
+                            <input value={this.state.email} onChange={this.handleInputChange} className='inputs' placeholder="Enter your email"></input>
                             <h3 className='log_pass'>Password</h3>
                             <input className='inputs' type="password" placeholder="Enter yor password"></input>
                             <h4 className='link-password'>Forgot password?</h4>

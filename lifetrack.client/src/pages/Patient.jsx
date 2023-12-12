@@ -5,15 +5,47 @@ class Patient extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: "Alex",
-            surname: "Fedak",
-            father: "Vasylovich",
-            date_of_birth: "27.03.1998",
-            diagnothe: "Гіпертензія",
-            conclusion_result_str: "Стан здоров'я погіршився"
+            name: '',
+            surname: '',
+            father: '',
+            date_of_birth: '',
+            diagnothe: '',
+            conclusion_result_str: ''
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleProfile = this.handleProfile.bind(this);
+    }
+
+    componentDidMount() 
+    {
+        const userId = this.props.match.params.userId;
+
+        fetch('https://example.com/data?userId=${userId}')
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.json();
+          })
+          .then(data => {
+            const { firstName, lastName, fatherName, dateofirth, Diagnothe, ConclusionResult_str} = data;
+            this.state.name = firstName;
+            this.state.surname = lastName;
+            this.state.father = fatherName;
+            this.state.date_of_birth = dateofirth;
+            this.state.diagnothe = Diagnothe;
+            this.state.conclusion_result_str = ConclusionResult_str;
+          })
+          .catch(error => {
+            console.error('There has been a problem with your fetch operation:', error);
+          }
+        );
+
+        const { first_name, last_name, middle_name } = this.state;
+        const pip = `${first_name} ${last_name} ${middle_name}`.trim();
+        this.setState({ pip });
+
+        this.state.email = userId;
     }
 
     handleChange = (event) => {
