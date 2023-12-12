@@ -6,29 +6,40 @@ class Patients extends React.Component {
         super(props);
         this.state = {
             search: '',
-            patients: ""
+            patients: "",
+            data: [],
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleProfile = this.handleProfile.bind(this);
-        //this.handleSearch = this.handleSearch.bind(this);
+        this.handleSearchChange = this.handleSearchChange.bind(this);
     }
 
-    //все закоментоване - для функції пошуку
-    //refreshList() {
-    //    fetch("" + this.state.search)
-    //        .then(response => response.json())
-    //        .then(data => {
-    //            this.setState({ patinents: data });
-    //        });
-    //}
+    componentDidMount() 
+    {
+        const userId = this.props.match.params.userId;
 
-    //componentDidMount() {
-    //    this.refreshList();
-    //}
+        fetch('https://example.com/data?userId=${userId}')
+            .then(response => {
+                if (!response.ok) {
+                throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                
+                this.setState({ data });
+            })
+            .catch(error => {
+                console.error('There has been a problem with your fetch operation:', error);
+            }
+        );
 
-    //componentDidUpdate() {
-    //    this.refreshList();
-    //}
+        this.state.email = userId;
+    }
+
+    handleSearchChange = (event) => {
+        this.setState({ search: event.target.value });
+    };
 
     handleSearch(event) {
         event.preventDefault();
@@ -45,10 +56,24 @@ class Patients extends React.Component {
     handleProfile = (event) => {
 
         event.preventDefault();
-        window.location = '/home';
+        window.location = '/home' + this.state.email;
     }
 
     render() {
+
+        const { data, search } = this.state;
+
+        const filteredData = data.filter(item => {
+            return (
+                item.last_name.toLowerCase().includes(search.toLowerCase()) ||
+                item.first_name.toLowerCase().includes(search.toLowerCase()) ||
+                item.middle_name.toLowerCase().includes(search.toLowerCase()) ||
+                item.diagnosis.toLowerCase().includes(search.toLowerCase()) ||
+                item.phone_number.toLowerCase().includes(search.toLowerCase()) ||
+                item.email.toLowerCase().includes(search.toLowerCase())
+            );
+        });
+
         return (
             <div className='window-main'>
                 <div className='window'>
@@ -77,7 +102,7 @@ class Patients extends React.Component {
                             type="text"
                             name="search"
                             value={this.state.search}
-                            onChange={this.handleChange}
+                            onChange={this.handleSearchChange}
                             placeholder="Пошук"
                         />
                         <button className='search-btn' onClick={this.handleSearch}>Пошук</button>
@@ -93,12 +118,16 @@ class Patients extends React.Component {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td className='pat_td'>#00001</td>
-                                    <td className='pat_td'>Теравський Олексій Володимирович</td>
-                                    <td className='pat_td'>Гіпертензія</td>
-                                    <td className='pat_td'>тел: 097-420-41-41 Email: teravskiyolex@gmail.com</td>
-                                </tr>
+                                {filteredData.map((item, index) => (
+                                    <tr key={index}>
+                                        <td>
+                                            <Link to={`/patient/${item.id}`}>{item.id}</Link>
+                                        </td>
+                                        <td>{item.first_name + " " + item.last_name + " " + item.middle_name}</td>
+                                        <td>{item.diagnosis}</td>
+                                        <td>{item.phone_number + " " + item.email}</td>
+                                    </tr>
+                                ))}
                             </tbody>
                         </table>
                     </div>

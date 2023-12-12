@@ -15,9 +15,9 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Login />}></Route>
-            <Route path='/home' element={<Home />}></Route>
-            <Route path='/patients' element={<Patients />}></Route>
-            <Route path='/patient' element={<Patient />}></Route>
+            <Route path='/home/:userId' element={<Home />}></Route>
+            <Route path='/patients/:userId' element={<Patients />}></Route>
+            <Route path='/patient:userId' element={<Patient />}></Route>
             <Route path='/patient_history' element={<Patient_history />}></Route>
             <Route path='/strategy' element={<Strategy />}></Route>
             <Route path='/new_strategy' element={<New_strategy />}></Route>
