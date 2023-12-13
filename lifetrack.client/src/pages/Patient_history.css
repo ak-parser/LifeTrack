@@ -1,5 +1,4 @@
-.place_patient_history
-{
+.place_patient_history {
     width: 99vw;
     height: 89vh;
     background-color: lightcyan;
@@ -7,20 +6,17 @@
     margin-top: 77px;
 }
 
-.history_reports
-{
+.history_reports {
     color: darkcyan;
     margin-top: 0px;
     margin-bottom: 10px;
 }
 
-.history_reports_table
-{
+.history_reports_table {
     width: 99vw;
 }
 
-.history_reports_click_out
-{
+.history_reports_click_out {
     width: 100vw;
     height: 40vh;
     margin-left: 0px;
@@ -39,7 +35,6 @@
     height: 40px;
     margin-right: 10px;
     margin-bottom: 10px;
-    
 }
 
 .circle {
@@ -52,13 +47,14 @@
 .place-ckeck-graph {
     display: flex;
     align-items: center;
+    flex-wrap: wrap; 
 }
 
 .checkbox-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 70px; 
+    margin-left: 70px;
     font-size: 24px;
 }
 
@@ -73,11 +69,24 @@
     }
 
 .chart-container {
-    width: 1300px;
+    width: 100%; 
+    max-width: 1300px; 
 }
 
 .button-place {
     margin-top: 20px;
     display: flex;
     align-items: flex-end;
+    justify-content: flex-end; 
+}
+
+.links {
+    display: block;
+}
+
+@media screen and (max-width: 600px) {
+    /* Приховуємо всі надписи, окрім "Профіль" */
+    .links:not(:contains("Профіль")) {
+        display: none;
+    }
 }
