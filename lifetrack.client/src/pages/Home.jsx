@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { api } from "../api";
+import { getUserId, setUserId } from "./reducer";
 import "./Home.css";
 
 const Home = () => {
@@ -49,7 +50,12 @@ const Home = () => {
 
   const handleProfile = (event) => {
     event.preventDefault();
-    window.location = "/home/" + doctor.id;
+    window.location = "/home/" + getUserId();
+  };
+
+  const handleSignOut = () => {
+    setUserId(null);
+    window.location = "/";
   };
 
   return (
@@ -67,7 +73,9 @@ const Home = () => {
           <h2 className="links">Сервіси</h2>
           <h2 className="links">Контакти</h2>
           <h2 className="links">Про нас</h2>
-          <h2 className="links">Вийти</h2>
+          <h2 className="links" onClick={handleSignOut}>
+            Вийти
+          </h2>
         </div>
       </div>
       <div className="place">

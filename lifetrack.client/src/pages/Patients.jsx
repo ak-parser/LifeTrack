@@ -2,6 +2,7 @@ import * as React from "react";
 import { api } from "../api";
 import { Link } from "react-router-dom";
 import "./Patients.css";
+import { getUserId, setUserId } from "./reducer";
 
 class Patients extends React.Component {
   constructor(props) {
@@ -12,13 +13,16 @@ class Patients extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleProfile = this.handleProfile.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
     this.handleSearchChange = this.handleSearchChange.bind(this);
   }
 
   fetchPatients = async () => {
     const id = window.location.toString().split("/")[4];
     try {
-      const response = await api.get(`patient/doctor/${id}`);
+      const response = await api.get(
+        `patient/doctor/${id}?search=${this.state.search}`
+      );
 
       if (response.status !== 200) {
         throw new Error("Network response was not ok");
@@ -55,7 +59,12 @@ class Patients extends React.Component {
 
   handleProfile = (event) => {
     event.preventDefault();
-    window.location = "/home" + this.state.email;
+    window.location = "/home/" + getUserId();
+  };
+
+  handleSignOut = () => {
+    setUserId(null);
+    window.location = "/";
   };
 
   render() {
@@ -87,7 +96,9 @@ class Patients extends React.Component {
             <h2 className="links">Сервіси</h2>
             <h2 className="links">Контакти</h2>
             <h2 className="links">Про нас</h2>
-            <h2 className="links">Вийти</h2>
+            <h2 className="links" onClick={this.handleSignOut}>
+              Вийти
+            </h2>
           </div>
         </div>
 
@@ -105,7 +116,7 @@ class Patients extends React.Component {
               className="search-input"
               type="text"
               name="search"
-              value={this.state.search}
+              value={search}
               onChange={this.handleSearchChange}
               placeholder="Пошук"
             />

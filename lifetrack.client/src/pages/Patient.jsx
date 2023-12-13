@@ -1,5 +1,6 @@
 import * as React from "react";
 import { api } from "../api";
+import { getUserId, setUserId } from "./reducer";
 import "./Patient.css";
 
 class Patient extends React.Component {
@@ -51,7 +52,12 @@ class Patient extends React.Component {
 
   handleProfile = (event) => {
     event.preventDefault();
-    window.location = "/home";
+    window.location = "/home/" + getUserId();
+  };
+
+  handleSignOut = () => {
+    setUserId(null);
+    window.location = "/";
   };
 
   render() {
@@ -70,7 +76,9 @@ class Patient extends React.Component {
             <h2 className="links">Сервіси</h2>
             <h2 className="links">Контакти</h2>
             <h2 className="links">Про нас</h2>
-            <h2 className="links">Вийти</h2>
+            <h2 className="links" onClick={this.handleSignOut}>
+              Вийти
+            </h2>
           </div>
         </div>
 
@@ -87,7 +95,8 @@ class Patient extends React.Component {
               </div>
               <div className="info_pat_right">
                 <h3 className="info_pat_str">
-                  Дата народження: {this.state.birthDate}
+                  Дата народження:{" "}
+                  {new Date(this.state.birthDate).toLocaleDateString("ua-UA")}
                 </h3>
                 <h3 className="info_pat_str">
                   Діагноз: {this.state.diagnosis}
