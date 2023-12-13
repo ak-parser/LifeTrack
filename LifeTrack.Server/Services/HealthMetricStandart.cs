@@ -6,11 +6,10 @@ namespace LifeTrack.Server.Services
 {
     public class HealthMetricStandard
     {
-        private List<HealthMetricRange> standards;
+        private readonly List<HealthMetricRange> standards = new();
 
         public HealthMetricStandard()
         {
-            standards = new List<HealthMetricRange>();
             InitializeFromFile();
         }
 

@@ -3,9 +3,6 @@
     public class HealthMetric
     {
         public string Name { get; set; }
-        public ICollection<HealthMetricValue> HealthMetricsValuesCollection { get; set; }
-        public HealthMetric() { 
-            HealthMetricsValuesCollection = new List<HealthMetricValue>();
-        }
+        public List<HealthMetricValue> HealthMetricsValuesCollection { get; set; } = new();
     }
 }
