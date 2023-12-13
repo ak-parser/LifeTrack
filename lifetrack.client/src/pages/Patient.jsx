@@ -52,7 +52,12 @@ class Patient extends React.Component {
   handleProfile = (event) => {
     event.preventDefault();
     window.location = "/home";
-  };
+    };
+
+   handleGraph = (event) => {
+        event.preventDefault();
+        window.location = "/patient_history";
+    };
 
   render() {
     return (
@@ -100,10 +105,11 @@ class Patient extends React.Component {
           </div>
           <div className="info_data">
             <div className="flex_button_history">
-              <input
+                        <input
+                            onClick={this.handleGraph}
                 className="button_history"
                 type="button"
-                value="Історія показників"
+                value="Статистика показників"
               ></input>
               <input
                 className="button_history"
