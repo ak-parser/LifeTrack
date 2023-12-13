@@ -111,7 +111,7 @@ const Patient_history = () => {
                     <img src={icon} alt="logo" className="circle" />
                     <div className="name">
                         <h1 className="name_system">Health</h1>
-                        <h1 className="name_system">Tracking</h1>
+                        <h1 className="name_system">Track</h1>
                     </div>
                     <h2 className="links" onClick={handleProfile}>
                         Профіль
