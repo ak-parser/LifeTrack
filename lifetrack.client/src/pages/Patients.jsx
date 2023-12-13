@@ -1,7 +1,9 @@
 import * as React from "react";
 import { api } from "../api";
 import { Link } from "react-router-dom";
+import { getUserId, setUserId } from "./reducer";
 import "./Patients.css";
+import icon from "../assets/icon.png";
 
 class Patients extends React.Component {
   constructor(props) {
@@ -12,13 +14,16 @@ class Patients extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleProfile = this.handleProfile.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
     this.handleSearchChange = this.handleSearchChange.bind(this);
   }
 
   fetchPatients = async () => {
     const id = window.location.toString().split("/")[4];
     try {
-      const response = await api.get(`patient/doctor/${id}`);
+      const response = await api.get(
+        `patient/doctor/${id}?search=${this.state.search}`
+      );
 
       if (response.status !== 200) {
         throw new Error("Network response was not ok");
@@ -55,31 +60,25 @@ class Patients extends React.Component {
 
   handleProfile = (event) => {
     event.preventDefault();
-    window.location = "/home" + this.state.email;
+    window.location = "/home/" + getUserId();
+  };
+
+  handleSignOut = () => {
+    setUserId(null);
+    window.location = "/";
   };
 
   render() {
     const { patients, search } = this.state;
 
-    // const filteredPatients = patients.filter((item) => {
-    //   return (
-    //     item.last_name.toLowerCase().includes(search.toLowerCase()) ||
-    //     item.first_name.toLowerCase().includes(search.toLowerCase()) ||
-    //     item.middle_name.toLowerCase().includes(search.toLowerCase()) ||
-    //     item.diagnosisValue.toLowerCase().includes(search.toLowerCase()) ||
-    //     item.phone_number.toLowerCase().includes(search.toLowerCase()) ||
-    //     item.email.toLowerCase().includes(search.toLowerCase())
-    //   );
-    // });
-
     return (
       <div className="window-main">
         <div className="window">
           <div className="flex">
-            <div className="circle"></div>
+            <img src={icon} alt="logo" className="circle" />
             <div className="name">
               <h1 className="name_system">Health</h1>
-              <h1 className="name_system">Tracking</h1>
+              <h1 className="name_system">Track</h1>
             </div>
             <h2 className="links" onClick={this.handleProfile}>
               Профіль
@@ -87,7 +86,9 @@ class Patients extends React.Component {
             <h2 className="links">Сервіси</h2>
             <h2 className="links">Контакти</h2>
             <h2 className="links">Про нас</h2>
-            <h2 className="links">Вийти</h2>
+            <h2 className="links" onClick={this.handleSignOut}>
+              Вийти
+            </h2>
           </div>
         </div>
 
@@ -96,16 +97,13 @@ class Patients extends React.Component {
             <h3 className="heads" id="patients">
               Пацієнти
             </h3>
-            <h3 className="heads" id="patients">
-              Соловій Х.О.
-            </h3>
           </div>
           <div className="search">
             <input
               className="search-input"
               type="text"
               name="search"
-              value={this.state.search}
+              value={search}
               onChange={this.handleSearchChange}
               placeholder="Пошук"
             />

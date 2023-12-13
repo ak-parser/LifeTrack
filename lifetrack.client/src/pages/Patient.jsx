@@ -1,6 +1,8 @@
 import * as React from "react";
 import { api } from "../api";
+import { getUserId, setUserId } from "./reducer";
 import "./Patient.css";
+import icon from "../assets/icon.png";
 
 class Patient extends React.Component {
   constructor(props) {
@@ -51,23 +53,28 @@ class Patient extends React.Component {
 
   handleProfile = (event) => {
     event.preventDefault();
-    window.location = "/home";
-    };
+    window.location = "/home/" + getUserId();
+  };
 
-   handleGraph = (event) => {
-        event.preventDefault();
-        window.location = "/patient_history";
-    };
+  handleGraph = (event) => {
+    event.preventDefault();
+    window.location = "/patient_history";
+  };
+
+  handleSignOut = () => {
+    setUserId(null);
+    window.location = "/";
+  };
 
   render() {
     return (
       <div className="window-main">
         <div className="window">
           <div className="flex">
-            <div className="circle"></div>
+            <img src={icon} alt="logo" className="circle" />
             <div className="name">
               <h1 className="name_system">Health</h1>
-              <h1 className="name_system">Tracking</h1>
+              <h1 className="name_system">Track</h1>
             </div>
             <h2 className="links" onClick={this.handleProfile}>
               Профіль
@@ -75,7 +82,9 @@ class Patient extends React.Component {
             <h2 className="links">Сервіси</h2>
             <h2 className="links">Контакти</h2>
             <h2 className="links">Про нас</h2>
-            <h2 className="links">Вийти</h2>
+            <h2 className="links" onClick={this.handleSignOut}>
+              Вийти
+            </h2>
           </div>
         </div>
 
@@ -92,7 +101,8 @@ class Patient extends React.Component {
               </div>
               <div className="info_pat_right">
                 <h3 className="info_pat_str">
-                  Дата народження: {this.state.birthDate}
+                  Дата народження:{" "}
+                  {new Date(this.state.birthDate).toLocaleDateString("ua-UA")}
                 </h3>
                 <h3 className="info_pat_str">
                   Діагноз: {this.state.diagnosis}
@@ -105,8 +115,8 @@ class Patient extends React.Component {
           </div>
           <div className="info_data">
             <div className="flex_button_history">
-                        <input
-                            onClick={this.handleGraph}
+              <input
+                onClick={this.handleGraph}
                 className="button_history"
                 type="button"
                 value="Статистика показників"
