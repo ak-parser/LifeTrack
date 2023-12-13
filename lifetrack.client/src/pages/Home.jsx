@@ -1,115 +1,108 @@
-import * as React from 'react';
-import './Home.css';
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { api } from "../api";
+import "./Home.css";
 
-class Home extends React.Component {
+const Home = () => {
+  const { id } = useParams();
+  const [doctor, setDoctor] = useState({
+    id,
+    name: "",
+    surname: "",
+    patronymic: "",
+    speciality: "",
+    email: "",
+  });
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            first_name: '',
-            last_name: '',
-            middle_name: '',
-            pip: '',
-            position: '',
-            email: ''
-        };
-        this.handleChange = this.handleChange.bind(this);
-        this.handlePatients = this.handlePatients.bind(this);
-        this.handleProfile = this.handleProfile.bind(this);
-    }
+  useEffect(() => {
+    const fetchDoctor = async () => {
+      try {
+        const response = await api.get(`doctor/${id}`);
 
-    componentDidMount() 
-    {
-        const userId = this.props.match.params.userId;
+        if (response.status !== 200) {
+          throw new Error("Network response was not ok");
+        }
 
-        fetch('https://example.com/data?userId=${userId}')
-          .then(response => {
-            if (!response.ok) {
-              throw new Error('Network response was not ok');
-            }
-            return response.json();
-          })
-          .then(data => {
-            const { firstName, lastName, fatherName, post } = data;
-            this.state.first_name = firstName;
-            this.state.last_name = lastName;
-            this.state.middle_name = fatherName;
-            this.state.position = post;
-          })
-          .catch(error => {
-            console.error('There has been a problem with your fetch operation:', error);
-          }
+        setDoctor({ ...response.data });
+      } catch (error) {
+        console.error(
+          "There has been a problem with your fetch operation:",
+          error
         );
+      }
+    };
+    fetchDoctor();
+  }, [id]);
 
-        const { first_name, last_name, middle_name } = this.state;
-        const pip = `${first_name} ${last_name} ${middle_name}`.trim();
-        this.setState({ pip });
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setDoctor({
+      ...doctor,
+      [name]: value,
+    });
+  };
 
-        this.state.email = userId;
-    }
+  const handlePatients = (event) => {
+    event.preventDefault();
+    window.location = "/patients/" + doctor.id;
+  };
 
-    handleChange = (event) => {
-        const { name, value } = event.target;
-        this.setState({
-            [name]: value
-        });
-    }
+  const handleProfile = (event) => {
+    event.preventDefault();
+    window.location = "/home/" + doctor.id;
+  };
 
-    handlePatients = (event) => {
+  return (
+    <div className="window-main">
+      <div className="window">
+        <div className="flex">
+          <div className="circle"></div>
+          <div className="name">
+            <h1 className="name_system">Health</h1>
+            <h1 className="name_system">Tracking</h1>
+          </div>
+          <h2 className="links" onClick={handleProfile}>
+            Профіль
+          </h2>
+          <h2 className="links">Сервіси</h2>
+          <h2 className="links">Контакти</h2>
+          <h2 className="links">Про нас</h2>
+          <h2 className="links">Вийти</h2>
+        </div>
+      </div>
+      <div className="place">
+        <h1 className="name_doctor">{`${doctor.name} ${doctor.patronymic} ${doctor.surname}`}</h1>
 
-        event.preventDefault();
-        window.location = '/patients/' + this.state.email;
-    }
+        <div className="ph_but">
+          <div className="photo">
+            <img src="" alt="Doctor" />
+          </div>
+          <div className="information">
+            <h2>Спеціалізація:</h2>
+            <h3>{doctor.speciality}</h3>
+            <h2>Електронна пошта:</h2>
+            <h3>{doctor.email}</h3>
+            <h3 id="inf">Детальна інформація...</h3>
+          </div>
+        </div>
+        <div className="button_place">
+          <div className="buttons">
+            <input
+              className="button_menu"
+              type="button"
+              value="Мої записи"
+            ></input>
+            <input
+              className="button_menu"
+              type="button"
+              value="Пацієнти"
+              onClick={handlePatients}
+            ></input>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-    handleProfile = (event) => {
-
-        event.preventDefault();
-        window.location = '/home/' + this.state.email;
-    }
-
-    render() {
-        return (
-            <div className='window-main'>
-                <div className='window'>
-                    <div className='flex'>
-                        <div className='circle'></div>
-                        <div className='name'>
-                            <h1 className='name_system'>Health</h1>
-                            <h1 className='name_system'>Tracking</h1>
-                        </div>
-                        <h2 className='links' onClick={this.handleProfile}>Профіль</h2>
-                        <h2 className='links'>Сервіси</h2>
-                        <h2 className='links'>Контакти</h2>
-                        <h2 className='links'>Про нас</h2>
-                        <h2 className='links'>Вийти</h2>
-
-                    </div>
-                </div>
-                <div className='place'>
-                    <h1 className='name_doctor'>{this.state.pip}</h1>
-
-                    <div className='ph_but'>
-                        <div className='photo'>
-                            <img src='' alt='Doctor' />
-                        </div>
-                        <div className='information'>
-                            <h2>Спеціалізація:</h2>
-                            <h3>{this.state.position}</h3>
-                            <h2>Електронна пошта:</h2>
-                            <h3>{this.state.email}</h3>
-                            <h3 id='inf'>Детальна інформація...</h3>
-                        </div>
-                    </div>
-                    <div className='button_place'>
-                        <div className='buttons'>
-                            <input className='button_menu' type='button' value="Мої записи"></input>
-                            <input className='button_menu' type='button' value="Пацієнти" onClick={this.handlePatients}></input>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        );
-    }
-  }
-  
-  export default Home;
+export default Home;

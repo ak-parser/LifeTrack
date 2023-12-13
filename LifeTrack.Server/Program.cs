@@ -1,11 +1,24 @@
+using LifeTrack.Server;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Add cors
+const string devCors = "devCors";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: devCors, policy =>
+    {
+        policy.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+    });
+});
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Register dependencies
+builder.Services.AddSingleton<DbContext>();
 
 var app = builder.Build();
 
@@ -20,6 +33,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(devCors);
 
 app.UseAuthorization();
 
