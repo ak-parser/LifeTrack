@@ -1,13 +1,14 @@
 ﻿using LifeTrack.Server.DataModels.Users;
 using Newtonsoft.Json;
 
-namespace LifeTrack.Server.DataModels
+namespace LifeTrack.Server
 {
-    public class DoctorsDbContext
+    public class DbContext
     {
-        public ICollection<Doctor> Doctors { get; set; }
-        public DoctorsDbContext() { 
-            Doctors = new List<Doctor>();
+        public List<Doctor> Doctors { get; set; } = [];
+
+        public DbContext()
+        {
             InitializeFromFile();
         }
 
@@ -20,7 +21,10 @@ namespace LifeTrack.Server.DataModels
                 string jsonContent = File.ReadAllText(jsonFilePath);
                 var doctors = JsonConvert.DeserializeObject<List<Doctor>>(jsonContent);
 
-                Doctors = doctors;
+                if (doctors is not null)
+                {
+                    Doctors = doctors;
+                }
             }
         }
     }

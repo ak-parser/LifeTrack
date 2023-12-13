@@ -1,6 +1,3 @@
-using System.Net.Cache;
-using System.Reflection;
-
 namespace LifeTrack.Server.DataModels.Users
 {
     public class Person
