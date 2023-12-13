@@ -27,7 +27,7 @@ namespace LifeTrack.Server.Controllers
         }
 
         [HttpGet("doctor/{id}")]
-        public ActionResult<IEnumerable<Patient>> GetPatientsByDoctor(int id)
+        public ActionResult<IEnumerable<Patient>> GetPatientsByDoctor(int id, [FromQuery] string? search)
         {
             _logger.LogInformation("Get patients by doctor");
 
@@ -37,7 +37,7 @@ namespace LifeTrack.Server.Controllers
                 return NotFound();
             }
 
-            return doctor.Patients;
+            return Ok(doctor.Patients.Where(x => (x.Name + x.Surname + x.Patronymic).Contains(search ?? "", StringComparison.OrdinalIgnoreCase)));
         }
     }
 }

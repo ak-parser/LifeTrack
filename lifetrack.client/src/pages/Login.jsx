@@ -1,6 +1,7 @@
 import * as React from "react";
 import { api } from "../api";
 import "./Login.css";
+import { setUserId } from "./reducer";
 
 class Login extends React.Component {
   constructor(props) {
@@ -36,6 +37,7 @@ class Login extends React.Component {
         throw new Error("Помилка входу. Неправильний email або пароль");
       }
 
+      setUserId(response.data);
       window.location.href = "/home/" + response.data;
     } catch (error) {
       this.setState({ error: error.message });
