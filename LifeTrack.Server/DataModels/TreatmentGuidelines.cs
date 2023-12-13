@@ -1,4 +1,4 @@
-﻿namespace LifeTrack.Server.DataModels
+namespace LifeTrack.Server.DataModels
 {
     public class TreatmentGuidelines
     {

@@ -1,14 +1,338 @@
 ﻿[
 	{
-	"MetricName": "BloodPressure",
-	"Gender": "Male",
-	"AgeRange": {"LowerLimit": 19, "UpperLimit": 40},
-	"ValueRange": {"LowerLimit": 50.0, "UpperLimit": 120.0}
+		"MetricName": "Blood Pressure",
+		"Gender": "Female",
+		"AgeRange": {
+			"LowerLimit": 0,
+			"UpperLimit": 19
+		},
+		"ValueRange": {
+			"LowerLimit": 90.0,
+			"UpperLimit": 110.0
+		}
 	},
 	{
-	"MetricName": "BloodPressure",
-	"Gender": "Female",
-	"AgeRange": {"LowerLimit": 20, "UpperLimit": 40},
-	"ValueRange": {"LowerLimit": 70.0, "UpperLimit": 110.0}
+		"MetricName": "Blood Pressure",
+		"Gender": "Female",
+		"AgeRange": {
+			"LowerLimit": 20,
+			"UpperLimit": 29
+		},
+		"ValueRange": {
+			"LowerLimit": 90.0,
+			"UpperLimit": 120.0
+		}
+	},
+	{
+		"MetricName": "Blood Pressure",
+		"Gender": "Female",
+		"AgeRange": {
+			"LowerLimit": 30,
+			"UpperLimit": 39
+		},
+		"ValueRange": {
+			"LowerLimit": 90.0,
+			"UpperLimit": 120.0
+		}
+	},
+	{
+		"MetricName": "Blood Pressure",
+		"Gender": "Female",
+		"AgeRange": {
+			"LowerLimit": 40,
+			"UpperLimit": 49
+		},
+		"ValueRange": {
+			"LowerLimit": 90.0,
+			"UpperLimit": 130.0
+		}
+	},
+	{
+		"MetricName": "Blood Pressure",
+		"Gender": "Female",
+		"AgeRange": {
+			"LowerLimit": 50,
+			"UpperLimit": 59
+		},
+		"ValueRange": {
+			"LowerLimit": 90.0,
+			"UpperLimit": 130.0
+		}
+	},
+	{
+		"MetricName": "Blood Pressure",
+		"Gender": "Female",
+		"AgeRange": {
+			"LowerLimit": 60,
+			"UpperLimit": 150
+		},
+		"ValueRange": {
+			"LowerLimit": 90.0,
+			"UpperLimit": 140.0
+		}
+	},
+	{
+		"MetricName": "Blood Pressure",
+		"Gender": "Male",
+		"AgeRange": {
+			"LowerLimit": 0,
+			"UpperLimit": 19
+		},
+		"ValueRange": {
+			"LowerLimit": 90.0,
+			"UpperLimit": 110.0
+		}
+	},
+	{
+		"MetricName": "Blood Pressure",
+		"Gender": "Male",
+		"AgeRange": {
+			"LowerLimit": 20,
+			"UpperLimit": 29
+		},
+		"ValueRange": {
+			"LowerLimit": 90.0,
+			"UpperLimit": 120.0
+		}
+	},
+	{
+		"MetricName": "Blood Pressure",
+		"Gender": "Male",
+		"AgeRange": {
+			"LowerLimit": 30,
+			"UpperLimit": 39
+		},
+		"ValueRange": {
+			"LowerLimit": 90.0,
+			"UpperLimit": 120.0
+		}
+	},
+	{
+		"MetricName": "Blood Pressure",
+		"Gender": "Male",
+		"AgeRange": {
+			"LowerLimit": 40,
+			"UpperLimit": 49
+		},
+		"ValueRange": {
+			"LowerLimit": 90.0,
+			"UpperLimit": 130.0
+		}
+	},
+	{
+		"MetricName": "Blood Pressure",
+		"Gender": "Male",
+		"AgeRange": {
+			"LowerLimit": 50,
+			"UpperLimit": 59
+		},
+		"ValueRange": {
+			"LowerLimit": 90.0,
+			"UpperLimit": 130.0
+		}
+	},
+	{
+		"MetricName": "Blood Pressure",
+		"Gender": "Male",
+		"AgeRange": {
+			"LowerLimit": 60,
+			"UpperLimit": 150
+		},
+		"ValueRange": {
+			"LowerLimit": 90.0,
+			"UpperLimit": 140.0
+		}
+	},
+	{
+		"MetricName": "Cholesterol Ratio",
+		"Gender": "Female",
+		"AgeRange": {
+			"LowerLimit": 0,
+			"UpperLimit": 49
+		},
+		"ValueRange": {
+			"LowerLimit": 2.0,
+			"UpperLimit": 4.0
+		}
+	},
+	{
+		"MetricName": "Cholesterol Ratio",
+		"Gender": "Female",
+		"AgeRange": {
+			"LowerLimit": 50,
+			"UpperLimit": 150
+		},
+		"ValueRange": {
+			"LowerLimit": 2.0,
+			"UpperLimit": 4.4
+		}
+	},
+	{
+		"MetricName": "Cholesterol Ratio",
+		"Gender": "Male",
+		"AgeRange": {
+			"LowerLimit": 0,
+			"UpperLimit": 49
+		},
+		"ValueRange": {
+			"LowerLimit": 2.0,
+			"UpperLimit": 4.0
+		}
+	},
+	{
+		"MetricName": "Cholesterol Ratio",
+		"Gender": "Male",
+		"AgeRange": {
+			"LowerLimit": 50,
+			"UpperLimit": 150
+		},
+		"ValueRange": {
+			"LowerLimit": 2.0,
+			"UpperLimit": 4.4
+		}
+	},
+	{
+		"MetricName": "BMI",
+		"Gender": "Male",
+		"AgeRange": {
+			"LowerLimit": 18,
+			"UpperLimit": 24
+		},
+		"ValueRange": {
+			"LowerLimit": 18.5,
+			"UpperLimit": 24.9
+		}
+	},
+	{
+		"MetricName": "BMI",
+		"Gender": "Male",
+		"AgeRange": {
+			"LowerLimit": 25,
+			"UpperLimit": 150
+		},
+		"ValueRange": {
+			"LowerLimit": 18.5,
+			"UpperLimit": 24.9
+		}
+	},
+	{
+		"MetricName": "BMI",
+		"Gender": "Female",
+		"AgeRange": {
+			"LowerLimit": 18,
+			"UpperLimit": 24
+		},
+		"ValueRange": {
+			"LowerLimit": 18.5,
+			"UpperLimit": 24.9
+		}
+	},
+	{
+		"MetricName": "BMI",
+		"Gender": "Female",
+		"AgeRange": {
+			"LowerLimit": 25,
+			"UpperLimit": 150
+		},
+		"ValueRange": {
+			"LowerLimit": 18.5,
+			"UpperLimit": 24.9
+		}
+	},
+	{
+		"MetricName": "Blood Sugar Level",
+		"Gender": "Male",
+		"AgeRange": {
+			"LowerLimit": 18,
+			"UpperLimit": 49
+		},
+		"ValueRange": {
+			"LowerLimit": 0,
+			"UpperLimit": 100
+		}
+	},
+	{
+		"MetricName": "Blood Sugar Level",
+		"Gender": "Male",
+		"AgeRange": {
+			"LowerLimit": 50,
+			"UpperLimit": 150
+		},
+		"ValueRange": {
+			"LowerLimit": 0,
+			"UpperLimit": 110
+		}
+	},
+	{
+		"MetricName": "Blood Sugar Level",
+		"Gender": "Female",
+		"AgeRange": {
+			"LowerLimit": 18,
+			"UpperLimit": 49
+		},
+		"ValueRange": {
+			"LowerLimit": 0,
+			"UpperLimit": 100
+		}
+	},
+	{
+		"MetricName": "Blood Sugar Level",
+		"Gender": "Female",
+		"AgeRange": {
+			"LowerLimit": 50,
+			"UpperLimit": 150
+		},
+		"ValueRange": {
+			"LowerLimit": 0,
+			"UpperLimit": 110
+		}
+	},
+	{
+		"MetricName": "HeartRate",
+		"Gender": "Male",
+		"AgeRange": {
+			"LowerLimit": 0,
+			"UpperLimit": 18
+		},
+		"ValueRange": {
+			"LowerLimit": 70,
+			"UpperLimit": 120
+		}
+	},
+	{
+		"MetricName": "HeartRate",
+		"Gender": "Female",
+		"AgeRange": {
+			"LowerLimit": 0,
+			"UpperLimit": 18
+		},
+		"ValueRange": {
+			"LowerLimit": 70,
+			"UpperLimit": 120
+		}
+	},
+	{
+		"MetricName": "HeartRate",
+		"Gender": "Male",
+		"AgeRange": {
+			"LowerLimit": 18,
+			"UpperLimit": 150
+		},
+		"ValueRange": {
+			"LowerLimit": 60,
+			"UpperLimit": 100
+		}
+	},
+	{
+		"MetricName": "HeartRate",
+		"Gender": "Female",
+		"AgeRange": {
+			"LowerLimit": 18,
+			"UpperLimit": 150
+		},
+		"ValueRange": {
+			"LowerLimit": 60,
+			"UpperLimit": 100
+		}
 	}
 ]
