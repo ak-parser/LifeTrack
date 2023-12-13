@@ -6,3 +6,9 @@ export const getRandomColor = () => {
     }
     return color;
 };
+
+export const getData = () => {
+    return Math.round(Math.random() * 100) % 2 === 0
+        ? "Значення показнику покращилось"
+        : "Значення показнику погіршилося";
+};
