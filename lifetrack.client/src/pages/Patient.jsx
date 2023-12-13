@@ -59,7 +59,12 @@ class Patient extends React.Component {
   handleGraph = (event) => {
     event.preventDefault();
     window.location = "/patient_history";
-  };
+    };
+
+    handleAnalysis = (event) => {
+        event.preventDefault();
+        window.location="/analysis"
+    }
 
   handleSignOut = () => {
     setUserId(null);
@@ -121,7 +126,8 @@ class Patient extends React.Component {
                 type="button"
                 value="Статистика показників"
               ></input>
-              <input
+                        <input
+                            onClick={this.handleAnalysis}
                 className="button_history"
                 type="button"
                 value="Аналіз останніх показників"
