@@ -1,8 +1,9 @@
 import * as React from "react";
 import { api } from "../api";
 import { Link } from "react-router-dom";
-import "./Patients.css";
 import { getUserId, setUserId } from "./reducer";
+import "./Patients.css";
+import icon from "../assets/icon.png";
 
 class Patients extends React.Component {
   constructor(props) {
@@ -70,25 +71,14 @@ class Patients extends React.Component {
   render() {
     const { patients, search } = this.state;
 
-    // const filteredPatients = patients.filter((item) => {
-    //   return (
-    //     item.last_name.toLowerCase().includes(search.toLowerCase()) ||
-    //     item.first_name.toLowerCase().includes(search.toLowerCase()) ||
-    //     item.middle_name.toLowerCase().includes(search.toLowerCase()) ||
-    //     item.diagnosisValue.toLowerCase().includes(search.toLowerCase()) ||
-    //     item.phone_number.toLowerCase().includes(search.toLowerCase()) ||
-    //     item.email.toLowerCase().includes(search.toLowerCase())
-    //   );
-    // });
-
     return (
       <div className="window-main">
         <div className="window">
           <div className="flex">
-            <div className="circle"></div>
+            <img src={icon} alt="logo" className="circle" />
             <div className="name">
               <h1 className="name_system">Health</h1>
-              <h1 className="name_system">Tracking</h1>
+              <h1 className="name_system">Track</h1>
             </div>
             <h2 className="links" onClick={this.handleProfile}>
               Профіль
@@ -106,9 +96,6 @@ class Patients extends React.Component {
           <div className="head-place">
             <h3 className="heads" id="patients">
               Пацієнти
-            </h3>
-            <h3 className="heads" id="patients">
-              Соловій Х.О.
             </h3>
           </div>
           <div className="search">

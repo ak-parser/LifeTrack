@@ -34,12 +34,10 @@
 
 .circle
 {
-    margin-top: 2px;
-    margin-left: 30px;
+    margin: 2px 20px 0 25px;
     border-radius: 50px;
     width: 65px;
     height: 65px;
-    background-color: white;
 }
 
 .links {
@@ -90,26 +88,28 @@
     margin-right: 20px;
 }
 
-    .photo img {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        object-fit: cover;
-    }
+.photo img {
+    width: 188px;
+    height: 250px;
+    margin-left: 80px;
+    object-fit: cover;
+}
 
 .information {
     flex-grow: 1;
-    padding: 20px;
+    padding-left: 340px;
+    padding-top: 50px;
+    text-align: left;
 }
 
-    .information h2 {
-        font-size: 32px;
-    }
+.information h2 {
+    font-size: 32px;
+}
 
-    .information h3 {
-        font-size: 28px;
-        margin-top: 5px;
-    }
+.information h3 {
+    font-size: 28px;
+    margin-top: 5px;
+}
 
 #inf {
     text-decoration: underline;

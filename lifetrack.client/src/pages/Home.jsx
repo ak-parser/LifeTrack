@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import doctorImg from "../assets/doctor.jpg";
+import icon from "../assets/icon.png";
 import { useParams } from "react-router-dom";
 import { api } from "../api";
 import { getUserId, setUserId } from "./reducer";
@@ -62,10 +64,10 @@ const Home = () => {
     <div className="window-main">
       <div className="window">
         <div className="flex">
-          <div className="circle"></div>
+          <img src={icon} alt="logo" className="circle" />
           <div className="name">
             <h1 className="name_system">Health</h1>
-            <h1 className="name_system">Tracking</h1>
+            <h1 className="name_system">Track</h1>
           </div>
           <h2 className="links" onClick={handleProfile}>
             Профіль
@@ -83,14 +85,12 @@ const Home = () => {
 
         <div className="ph_but">
           <div className="photo">
-            <img src="" alt="Doctor" />
+            <img src={doctorImg} alt="doctor" />
           </div>
           <div className="information">
-            <h2>Спеціалізація:</h2>
-            <h3>{doctor.speciality}</h3>
-            <h2>Електронна пошта:</h2>
-            <h3>{doctor.email}</h3>
-            <h3 id="inf">Детальна інформація...</h3>
+            <h3>Спеціалізація: {doctor.speciality}</h3>
+            <h3>Електронна пошта: {doctor.email}</h3>
+            <h4 id="inf">Детальна інформація...</h4>
           </div>
         </div>
         <div className="button_place">

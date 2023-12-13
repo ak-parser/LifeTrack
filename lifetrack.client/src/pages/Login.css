@@ -36,14 +36,11 @@
     color: #ffffff;
 }
 
-.circle
-{
-    margin-top: 2px;
-    margin-left: 30px;
+.circle {
+    margin: 2px 20px 0 25px;
     border-radius: 50px;
     width: 65px;
     height: 65px;
-    background-color: white;
 }
 
 .flex
@@ -145,7 +142,7 @@
 
 @media (max-width: 768px) {
     .window {
-        height: 120px; /* Змінюємо висоту верхньої частини для маленьких екранів */
+        height: 120px; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
     }
 
     .name {

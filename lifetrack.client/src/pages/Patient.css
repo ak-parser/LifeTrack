@@ -24,6 +24,13 @@
     cursor: pointer;
 }
 
+.circle {
+    margin: 2px 20px 0 25px;
+    border-radius: 50px;
+    width: 65px;
+    height: 65px;
+}
+
 .name_patient {
     margin: 10px;
     padding: 10px;

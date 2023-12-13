@@ -2,6 +2,7 @@ import * as React from "react";
 import { api } from "../api";
 import { getUserId, setUserId } from "./reducer";
 import "./Patient.css";
+import icon from "../assets/icon.png";
 
 class Patient extends React.Component {
   constructor(props) {
@@ -65,10 +66,10 @@ class Patient extends React.Component {
       <div className="window-main">
         <div className="window">
           <div className="flex">
-            <div className="circle"></div>
+            <img src={icon} alt="logo" className="circle" />
             <div className="name">
               <h1 className="name_system">Health</h1>
-              <h1 className="name_system">Tracking</h1>
+              <h1 className="name_system">Track</h1>
             </div>
             <h2 className="links" onClick={this.handleProfile}>
               Профіль
