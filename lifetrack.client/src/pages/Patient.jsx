@@ -33,10 +33,7 @@ class Patient extends React.Component {
                 diagnosis: response.data.diagnosisValue.name,
             });
         } catch (error) {
-            console.error(
-                "There has been a problem with your fetch operation:",
-                error
-            );
+            console.error("There has been a problem with your fetch operation:", error);
         }
     };
 
@@ -60,6 +57,11 @@ class Patient extends React.Component {
         event.preventDefault();
         const id = window.location.toString().split("/")[4];
         window.location = "/patient_history/" + id;
+    };
+
+    handleAnalysis = (event) => {
+        event.preventDefault();
+        window.location = "/analysis";
     };
 
     handleSignOut = () => {
@@ -94,26 +96,15 @@ class Patient extends React.Component {
                         <h3 className="name_patient">Пацієнт</h3>
                         <div className="flex_pat_info">
                             <div className="info_pat_left">
-                                <h3 className="info_pat_str">
-                                    Ім`я: {this.state.name}
-                                </h3>
-                                <h3 className="info_pat_str">
-                                    Прізвище: {this.state.surname}
-                                </h3>
-                                <h3 className="info_pat_str">
-                                    По-батькові: {this.state.patronymic}
-                                </h3>
+                                <h3 className="info_pat_str">Ім`я: {this.state.name}</h3>
+                                <h3 className="info_pat_str">Прізвище: {this.state.surname}</h3>
+                                <h3 className="info_pat_str">По-батькові: {this.state.patronymic}</h3>
                             </div>
                             <div className="info_pat_right">
                                 <h3 className="info_pat_str">
-                                    Дата народження:{" "}
-                                    {new Date(
-                                        this.state.birthDate
-                                    ).toLocaleDateString("ua-UA")}
+                                    Дата народження: {new Date(this.state.birthDate).toLocaleDateString("ua-UA")}
                                 </h3>
-                                <h3 className="info_pat_str">
-                                    Діагноз: {this.state.diagnosis}
-                                </h3>
+                                <h3 className="info_pat_str">Діагноз: {this.state.diagnosis}</h3>
                                 <h3 className="info_pat_str" id="strategy">
                                     Стратегія лікування
                                 </h3>
@@ -129,6 +120,7 @@ class Patient extends React.Component {
                                 value="Статистика показників"
                             ></input>
                             <input
+                                onClick={this.handleAnalysis}
                                 className="button_history"
                                 type="button"
                                 value="Аналіз останніх показників"
