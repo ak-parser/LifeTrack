@@ -13,7 +13,7 @@ class Patient extends React.Component {
             patronymic: "",
             birthDate: "",
             diagnosis: "",
-            conclusion_result_str: "",
+            healthMetricsCollection: [],
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleProfile = this.handleProfile.bind(this);
@@ -110,6 +110,31 @@ class Patient extends React.Component {
                                 </h3>
                             </div>
                         </div>
+                        <table className="patient">
+                            <thead>
+                                <tr>
+                                    <th className="pat_tr">Тип показнику</th>
+                                    <th className="pat_tr">Значення</th>
+                                    <th className="pat_tr">Дата заміру</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {this.state.healthMetricsCollection.map((item, index) => {
+                                    const { value, measurementDateTime } = item.healthMetricsValuesCollection.reduce(
+                                        (prev, curr) =>
+                                            prev.measurementDateTime < curr.measurementDateTime ? prev : curr
+                                    );
+
+                                    return (
+                                        <tr key={index} className="pat_td">
+                                            <td>{item.name}</td>
+                                            <td>{value}</td>
+                                            <td>{new Date(measurementDateTime).toLocaleDateString("ua-UA")}</td>
+                                        </tr>
+                                    );
+                                })}
+                            </tbody>
+                        </table>
                     </div>
                     <div className="info_data">
                         <div className="flex_button_history">
